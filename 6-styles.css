@@ -1,0 +1,168 @@
+/* ==========================================
+   RESET E CONFIGURAÇÕES BASE (Foco em Celular)
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #2d3748;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   HEADER / MENU (Mobile First)
+   ========================================== */
+.main-header {
+    display: flex;
+    flex-direction: column; /* Empilha o menu e o botão no celular */
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0 30px 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Se a tela for muito pequena, os links quebram linha */
+    justify-content: center;
+}
+
+.link-menu {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.link-menu:hover {
+    color: #3182ce;
+}
+
+.button-sign-up {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button-sign-up:hover {
+    background-color: #2b6cb0;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL (Mobile First)
+   ========================================== */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Uma coisa abaixo da outra no celular */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 450px; /* Evita que a foto fique gigante em telas médias */
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center; /* Centraliza o texto no celular */
+    align-items: center;
+}
+
+.content-container h1 {
+    font-size: 2.2rem;
+    color: #1a202c;
+    line-height: 1.2;
+}
+
+.content-container p {
+    color: #718096;
+    font-size: 1rem;
+}
+
+.button-learn-more {
+    background-color: #2d3748;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: background 0.2s;
+}
+
+.button-learn-more:hover {
+    background-color: #1a202c;
+}
+
+/* ==========================================
+   MEDIA QUERY (Ajustes para Computador - Telas > 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    /* Coloca o menu e o botão na mesma linha e joga para a direita */
+    .main-header {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 30px;
+        padding-bottom: 60px;
+    }
+
+    /* Transforma o layout em duas colunas lado a lado */
+    .main-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Faz cada metade ocupar o mesmo espaço */
+    .image-container, 
+    .content-container {
+        flex: 1;
+    }
+
+    .responsive-img {
+        max-width: 500px; /* Permite a imagem crescer um pouco mais no PC */
+    }
+
+    /* Alinha os textos e o botão para a esquerda no PC */
+    .content-container {
+        text-align: left;
+        align-items: flex-start;
+        padding-left: 40px; /* Espaço entre a imagem e o texto */
+    }
+
+    .content-container h1 {
+        font-size: 3.5rem; /* Título imponente no PC */
+    }
+}
+     

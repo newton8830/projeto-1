@@ -1,0 +1,191 @@
+/* ==========================================
+   RESET E CONFIGURAÇÕES BASE (Celular)
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f7f9fc;
+    color: #333333;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   HEADER / MENU (Mobile First)
+   ========================================== */
+.main-header {
+    display: flex;
+    flex-direction: column; /* Empilha o menu e o botão no celular */
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0 30px 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Permite quebrar linha em celulares muito pequenos */
+    justify-content: center;
+}
+
+.link-header {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.link-header:hover {
+    color: #2ecc71; /* Cor verde/saúde para combinar com "We Care" */
+}
+
+.button-header {
+    background-color: transparent;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-header:hover {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL (Mobile First)
+   ========================================== */
+.main-container {
+    display: flex;
+    flex-direction: column; /* No celular, imagem fica em cima, texto embaixo */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+}
+
+.image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 380px; /* Evita que a foto ocupe a tela inteira em tablets */
+    height: auto;
+    border-radius: 15px; /* Bordas arredondadas elegantes */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center; /* Centraliza textos no celular */
+    align-items: center;
+}
+
+.content-section h1 {
+    font-size: 2.8rem;
+    color: #2ecc71;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.content-section h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.content-section p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.button-main {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.button-main:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   MEDIA QUERY (Ajustes para Computador - Telas > 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    /* Alinha os links na esquerda e o botão Login na direita */
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 60px;
+    }
+
+    /* Divide a tela ao meio: Imagem na esquerda, Texto na direita */
+    .main-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .image-wrapper, 
+    .content-section {
+        flex: 1;
+    }
+
+    .image-wrapper {
+        justify-content: flex-start;
+    }
+
+    .logo-image {
+        max-width: 450px; /* Permite a imagem crescer mais no computador */
+    }
+
+    /* Alinha os textos e botões para a esquerda no computador */
+    .content-section {
+        text-align: left;
+        align-items: flex-start;
+        padding-left: 50px; /* Dá um espaço confortável entre a foto e o texto */
+    }
+
+    .content-section h1 {
+        font-size: 4rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+}
